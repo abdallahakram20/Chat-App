@@ -1,0 +1,17 @@
+# .gitignore - Chat App
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv/
+venv/
+ENV/
+*.log
+.DS_Store
+*.egg-info/
+dist/
+build/
+server_received_files/
+client_received_files/
+*.tmp
+.ipynb_checkpoints/
