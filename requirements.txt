@@ -1,0 +1,2 @@
+Pillow>=9.0.0
+# socket, threading, os, struct, zlib, json, tkinter — all standard library
