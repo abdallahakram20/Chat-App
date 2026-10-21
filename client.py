@@ -268,7 +268,11 @@ class ChatClient:
                     file_data  = decompress_data(payload) if compressed else payload
 
                     save_path = os.path.join(SAVE_DIR, f"{sender}_{filename}")
-                    with open(save_path, 'wb') as f:
+                    base_real = os.path.realpath(SAVE_DIR)
+                    target_real = os.path.realpath(save_path)
+                    if os.path.commonpath([base_real, target_real]) != base_real:
+                        raise Exception('Invalid file path')
+                    with open(target_real, 'wb') as f:
                         f.write(file_data)
 
                     if file_type == 'image':
